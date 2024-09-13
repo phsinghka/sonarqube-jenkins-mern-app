@@ -3,7 +3,7 @@ pipeline {
 
 	tools {
     nodejs "NODE16"
-    sonar "SonarQube-Javascript"
+    SonarQubeInstallation "SonarQube-Javascript"
 	}
 
   environment {
