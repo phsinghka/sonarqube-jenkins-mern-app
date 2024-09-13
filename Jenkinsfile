@@ -3,7 +3,7 @@ pipeline {
 
 	tools {
     nodejs "NODE16"
-    // sonar "SonarQube Scanner for JavaScript"
+    sonar "SonarQube-Javascript"
 	}
 
   environment {
