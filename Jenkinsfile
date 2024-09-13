@@ -28,7 +28,7 @@ pipeline {
     stage ('Sonarqube Analysis (Frontend)'){
       steps{
         dir('frontend'){
-          withSonarQubeEnv('SonarQube Server'){
+          withSonarQubeEnv('SonarQube-Frontend'){
             sh '''
             sonar-scanner \
               -Dsonar.projectKey=$FRONTEND_SONAR_KEY \
@@ -45,7 +45,7 @@ pipeline {
     stage ('Sonarqube Analysis (Backend)'){
       steps{
         dir('backend'){
-          withSonarQubeEnv('SonarQube Server'){
+          withSonarQubeEnv('SonarQube-Backend'){
             sh '''
             sonar-scanner \
               -Dsonar.projectKey=$BACKEND_SONAR_KEY \
