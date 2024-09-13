@@ -176,38 +176,18 @@ This project uses **SonarQube Quality Gates** to enforce the following criteria:
 ### Suggested Screenshots for Documentation:
 
 1. **SonarQube Dashboard**:
-   - Show the analysis report for the frontend and backend projects, highlighting code coverage, vulnerabilities, and code smells.
+<br/>![SonarQube Dashboard](screenshots/sonar-dashboard.png)
 
 2. **Jenkins Pipeline**:
-   - Show the entire pipeline execution in Jenkins, including each stage (Install Dependencies, SonarQube Analysis, Quality Gate Check).
+<br/>![Jenkins Pipeline](screenshots/jenkins-stages.png)
+
 
 3. **SonarQube Quality Gate**:
-   - Capture the quality gate settings and results for both the frontend and backend projects.
+<br/>![SonarQube Quality Gate](screenshots/backend-qg.png)
+<br/>![SonarQube Quality Gate](screenshots/frontend-qg.png)
 
-4. **Frontend Build Output**:
-   - Show the console output of the `npm install` and `npm run build` commands for the frontend.
 
-5. **Backend Build Output**:
-   - Show the console output of the `npm install` and `npm run dev` commands for the backend.
+4. **Jenkins Configuration**:
+<br/>![Jenkins Configuration](screenshots/sonarqube-servers.png)
 
-6. **Jenkins Configuration**:
-   - Show the Jenkins configuration for SonarQube (Global Tool Configuration and SonarQube Servers settings).
 
-7. **SonarQube Coverage Report**:
-   - Show the code coverage report for both the frontend and backend in SonarQube.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Contributing
-
-If you would like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
-
----
-
-This README provides a complete overview of your project, ensuring that it's well-documented for others to follow and understand. Let me know if you need further adjustments!
