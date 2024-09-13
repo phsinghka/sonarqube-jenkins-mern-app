@@ -3,12 +3,11 @@ pipeline {
 
 	tools {
     nodejs "NODE16"
-    SonarQubeInstallation "SonarQube-Javascript"
 	}
 
   environment {
     FRONTEND_SONAR_KEY = 'MERN-Frontend'
-    BACKEND_SONAR_KEY = 'MERN-backend'
+    BACKEND_SONAR_KEY = 'MERN-Backend'
   }
 
   stages{
@@ -26,11 +25,14 @@ pipeline {
     }
 
     stage ('Sonarqube Analysis (Frontend)'){
-      steps{
+      environment {
+             scannerHome = tool 'SonarQube-Javascript'
+      }
+	    steps{
         dir('frontend'){
           withSonarQubeEnv('SonarQube-Frontend'){
             sh '''
-            sonar-scanner \
+            ${scannerHome}/bin/sonar-scanner \
               -Dsonar.projectKey=$FRONTEND_SONAR_KEY \
               -Dsonar.sources=. \
               -Dsonar.language=js \
@@ -43,11 +45,14 @@ pipeline {
 
 
     stage ('Sonarqube Analysis (Backend)'){
+      environment {
+          scannerHome = tool 'SonarQube-Javascript'
+      }
       steps{
         dir('backend'){
           withSonarQubeEnv('SonarQube-Backend'){
             sh '''
-            sonar-scanner \
+            ${scannerHome}/bin/sonar-scanner \
               -Dsonar.projectKey=$BACKEND_SONAR_KEY \
               -Dsonar.sources=. \
               -Dsonar.language=js \
